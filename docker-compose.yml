@@ -1,0 +1,41 @@
+version: '3.4'
+
+services:
+  wwdemo.api:
+    image: ${DOCKER_REGISTRY-}wwdemoapi
+    ports:
+      - "8080:8080"
+    networks:
+      - ww
+    build:
+      context: .
+      dockerfile: WWDemo.Api/Dockerfile
+
+  wwdemo.migrationrunner:
+    image: ${DOCKER_REGISTRY-}wwdemomigrationrunner
+    networks:
+      - ww
+    build:
+      context: .
+      target: final
+      dockerfile: WWDemo.MigrationRunner/Dockerfile
+    depends_on:
+      - wwdemo.postgresdb
+
+  wwdemo.postgresdb:
+    networks:
+      - ww
+    image: "postgres"
+    container_name: wwdemo.postgresdb
+
+  pgAdmin:
+    networks:
+      - ww
+    image: "dpage/pgadmin4"
+    container_name: pgAdmin
+
+networks:
+  ww:
+volumes:
+  local_pgdata:
+  pgadmin-data:

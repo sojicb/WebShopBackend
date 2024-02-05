@@ -1,0 +1,6 @@
+@WWDemo.Api_HostAddress = http://localhost:5110
+
+GET {{WWDemo.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

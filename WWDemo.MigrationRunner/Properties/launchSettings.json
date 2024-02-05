@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "WWDemo.MigrationRunner": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
