@@ -1,6 +1,4 @@
-using Microsoft.EntityFrameworkCore;
-using Npgsql;
-using WWDemo.Data;
+using WWDemo.Data.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,11 +9,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var connString = ConnectionStringProvider.GetConnectionString(builder.Configuration);
-builder.Services.AddDbContext<ApiDbContext>(options =>
-{
-	options.UseNpgsql(connString);
-});
+builder.Services.AddServiceDataLayer(builder.Configuration);
 
 var app = builder.Build();
 
