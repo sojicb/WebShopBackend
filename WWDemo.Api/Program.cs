@@ -1,3 +1,4 @@
+using WWDemo.Application.Products.Commands.AddProduct;
 using WWDemo.Data.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
