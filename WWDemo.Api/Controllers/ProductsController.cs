@@ -4,6 +4,7 @@ using WWDemo.Application.DTOs;
 using WWDemo.Api.Requests;
 using WWDemo.Application.Products.Commands.AddProduct;
 using WWDemo.Application.Products.Queries.GetAllProducts;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace WWDemo.Api.Controllers
 {
@@ -29,13 +30,13 @@ namespace WWDemo.Api.Controllers
 				Name = request.Name,
 				Price = request.Price,
 				SerialNumber = request.SerialNumber,
-			});
-
-			return Ok();
-		}
+            });
+            return Ok();
+        }
 
 		[HttpGet]
-		public async Task<List<ProductRepresentation>> GetAllProducts()
+        [ProducesResponseType(typeof(List<ProductRepresentation>), StatusCodes.Status200OK)]
+        public async Task<List<ProductRepresentation>> GetAllProducts()
 		{
 			var result = await _mediator.Send(new GetAllProductsQuery());
 
