@@ -25,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\WWDemo.Application\WWDemo.Application.csproj" />
+    <ProjectReference Include="..\WWDemo.Application\WWDemo.Application.csproj" />
     <ProjectReference Include="..\WWDemo.Data\WWDemo.Data.csproj" />
   </ItemGroup>
 
