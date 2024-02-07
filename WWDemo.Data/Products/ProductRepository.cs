@@ -1,4 +1,5 @@
-﻿using WWDemo.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using WWDemo.Models;
 
 namespace WWDemo.Data.Products
 {
@@ -14,6 +15,29 @@ namespace WWDemo.Data.Products
         public IQueryable<Product> GetAllProductsQuerable()
         {
             return GetQueryable()!;
+        }
+
+        public Task<Product?> GetProductById(Guid productId)
+        {
+            return GetQueryable().FirstOrDefaultAsync(x => x!.Id == productId);
+        }
+
+        public async Task<Product?> AddProduct(Product product)
+        {
+            var result = _apiDbContext.Products?.Add(product)!;
+
+            await _apiDbContext.SaveChangesAsync();
+
+            return result.Entity;
+        }
+
+        public async Task<Product?> UpdateProduct(Product product)
+        {
+            var result = _apiDbContext.Products?.Update(product)!;
+
+            await _apiDbContext.SaveChangesAsync();
+
+            return result.Entity;
         }
 
         private IQueryable<Product?> GetQueryable()
