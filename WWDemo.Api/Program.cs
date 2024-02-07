@@ -1,4 +1,5 @@
 using WWDemo.Application.Products.Commands.AddProduct;
+using WWDemo.Application.Products.Queries.GetAllProducts;
 using WWDemo.Data.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,8 +9,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen();
+
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(AddProductCommand).Assembly));
+
+//builder.Services.AddAutoMapper(typeof(GetAllProductsProfileMapper).Assembly);
 
 builder.Services.AddServiceDataLayer(builder.Configuration);
 

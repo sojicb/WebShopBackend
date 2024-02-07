@@ -1,6 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using WWDemo.Application.DTOs;
 using WWDemo.Application.Products.Commands.AddProduct;
+using WWDemo.Application.Products.Queries.GetAllProducts;
 
 namespace WWDemo.Api.Controllers
 {
@@ -24,11 +26,11 @@ namespace WWDemo.Api.Controllers
 		}
 
 		[HttpGet]
-		public async Task<IActionResult> GetAllProducts()
+		public async Task<List<ProductRepresentation>> GetAllProducts()
 		{
-			var result = await _mediator.Send(new AddProductCommand());
+			var result = await _mediator.Send(new GetAllProductsQuery());
 
-			return Ok();
+			return result;
 		}
 
 		[HttpGet("serial-number")]
