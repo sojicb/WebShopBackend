@@ -12,9 +12,9 @@ namespace WWDemo.Data.Products
             _apiDbContext = apiDbContext;
         }
 
-        public IQueryable<Product> GetAllProductsQuerable()
+        public Task<List<Product?>> GetAllProducts()
         {
-            return GetQueryable()!;
+            return Task.Run(() => GetQueryable().ToList());
         }
 
         public Task<Product?> GetProductById(Guid productId)

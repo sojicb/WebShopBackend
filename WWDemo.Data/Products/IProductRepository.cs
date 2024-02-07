@@ -4,7 +4,7 @@ namespace WWDemo.Data.Products
 {
     public interface IProductRepository
     {
-        IQueryable<Product> GetAllProductsQuerable();
+        Task<List<Product?>> GetAllProducts();
 
         Task<Product?> GetProductById(Guid productId);
 

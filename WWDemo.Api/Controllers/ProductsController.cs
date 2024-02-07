@@ -1,14 +1,13 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using WWDemo.Application.DTOs;
 using WWDemo.Api.Requests;
+using WWDemo.Application.DTOs;
 using WWDemo.Application.Products.Commands.AddProduct;
 using WWDemo.Application.Products.Queries.GetAllProducts;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace WWDemo.Api.Controllers
 {
-	[Route("[controller]")]
+    [Route("[controller]")]
 	[ApiController]
 	public class ProductsController : ControllerBase
 	{
@@ -31,6 +30,7 @@ namespace WWDemo.Api.Controllers
 				Price = request.Price,
 				SerialNumber = request.SerialNumber,
             });
+
             return Ok();
         }
 

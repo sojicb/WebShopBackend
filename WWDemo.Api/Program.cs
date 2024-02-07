@@ -14,9 +14,9 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(AddProductCommand).Assembly));
 
-//builder.Services.AddAutoMapper(typeof(GetAllProductsProfileMapper).Assembly);
-
 builder.Services.AddServiceDataLayer(builder.Configuration);
+
+builder.Services.AddAutoMapper(typeof(GetAllProductsProfileMapper));
 
 var app = builder.Build();
 
