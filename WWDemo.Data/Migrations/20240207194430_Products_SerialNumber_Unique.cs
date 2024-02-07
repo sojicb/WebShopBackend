@@ -5,7 +5,7 @@
 namespace WWDemo.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class Add_Index_ProductsSerialNumber : Migration
+    public partial class Products_SerialNumber_Unique : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -13,7 +13,8 @@ namespace WWDemo.Data.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Products_SerialNumber",
                 table: "Products",
-                column: "SerialNumber");
+                column: "SerialNumber",
+                unique: true);
         }
 
         /// <inheritdoc />

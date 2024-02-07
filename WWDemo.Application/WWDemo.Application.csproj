@@ -15,4 +15,8 @@
 		<ProjectReference Include="..\WWDemo.Data\WWDemo.Data.csproj" />
 	</ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WWDemo.Data\WWDemo.Data.csproj" />
+  </ItemGroup>
+
 </Project>
