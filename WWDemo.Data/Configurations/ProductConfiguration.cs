@@ -8,7 +8,8 @@ namespace WWDemo.Data.Configurations
 	{
 		public void Configure(EntityTypeBuilder<Product> builder)
 		{
-			builder.HasIndex(x => x.SerialNumber);
+			builder.HasIndex(x => x.SerialNumber)
+					.IsUnique(true);
 		}
 	}
 }

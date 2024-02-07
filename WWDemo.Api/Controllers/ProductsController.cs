@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using WWDemo.Api.Requests;
 using WWDemo.Application.Products.Commands.AddProduct;
 
 namespace WWDemo.Api.Controllers
@@ -16,9 +17,17 @@ namespace WWDemo.Api.Controllers
         }
 
         [HttpPost]
-		public async Task<IActionResult> AddProduct()
+		[ProducesResponseType(200)]
+		[ProducesResponseType(400)]
+		public async Task<IActionResult> AddProduct(AddProductRequest request)
 		{
-			var result = await _mediator.Send(new AddProductCommand());
+			var result = await _mediator.Send(new AddProductCommand
+			{
+				Category = request.Category,
+				Name = request.Name,
+				Price = request.Price,
+				SerialNumber = request.SerialNumber,
+			});
 
 			return Ok();
 		}

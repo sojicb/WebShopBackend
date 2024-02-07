@@ -12,8 +12,8 @@ using WWDemo.Data;
 namespace WWDemo.Data.Migrations
 {
     [DbContext(typeof(ApiDbContext))]
-    [Migration("20240206193602_Add_Index_ProductsSerialNumber")]
-    partial class Add_Index_ProductsSerialNumber
+    [Migration("20240207194430_Products_SerialNumber_Unique")]
+    partial class Products_SerialNumber_Unique
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,7 +45,8 @@ namespace WWDemo.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("SerialNumber");
+                    b.HasIndex("SerialNumber")
+                        .IsUnique();
 
                     b.ToTable("Products");
                 });

@@ -42,7 +42,8 @@ namespace WWDemo.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("SerialNumber");
+                    b.HasIndex("SerialNumber")
+                        .IsUnique();
 
                     b.ToTable("Products");
                 });
