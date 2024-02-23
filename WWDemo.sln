@@ -13,6 +13,8 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WWDemo.MigrationRunner", "WWDemo.MigrationRunner\WWDemo.MigrationRunner.csproj", "{3BFDA660-7DD9-4F8F-AA90-6F558732438B}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WWDemo.Application", "WWDemo.Application\WWDemo.Application.csproj", "{05BA94F5-5159-41DD-A29A-7644C9755F47}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{3BFDA660-7DD9-4F8F-AA90-6F558732438B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BFDA660-7DD9-4F8F-AA90-6F558732438B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BFDA660-7DD9-4F8F-AA90-6F558732438B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05BA94F5-5159-41DD-A29A-7644C9755F47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05BA94F5-5159-41DD-A29A-7644C9755F47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05BA94F5-5159-41DD-A29A-7644C9755F47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05BA94F5-5159-41DD-A29A-7644C9755F47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
