@@ -1,32 +1,32 @@
 version: '3.4'
 
 services:
-  wwdemo.api:
-    image: ${DOCKER_REGISTRY-}wwdemoapi
+  webshop.api:
+    image: ${DOCKER_REGISTRY-}webshopapi
     ports:
       - "8080:8080"
     networks:
       - ww
     build:
       context: .
-      dockerfile: WWDemo.Api/Dockerfile
+      dockerfile: WebShop.Api/Dockerfile
 
-  wwdemo.migrationrunner:
-    image: ${DOCKER_REGISTRY-}wwdemomigrationrunner
+  webshop.migrationrunner:
+    image: ${DOCKER_REGISTRY-}webshopmigrationrunner
     networks:
       - ww
     build:
       context: .
       target: final
-      dockerfile: WWDemo.MigrationRunner/Dockerfile
+      dockerfile: WebShop.MigrationRunner/Dockerfile
     depends_on:
-      - wwdemo.postgresdb
+      - webshop.postgresdb
 
-  wwdemo.postgresdb:
+  webshop.postgresdb:
     networks:
       - ww
     image: "postgres"
-    container_name: wwdemo.postgresdb
+    container_name: webshop.postgresdb
 
   pgAdmin:
     networks:
