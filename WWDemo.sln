@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WWDemo.Api", "WWDemo.Api\WWDemo.Api.csproj", "{9731FB31-CD06-44A1-BD6B-311EA7EDF481}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebShop.Api", "WebShop.Api\WebShop.Api.csproj", "{9731FB31-CD06-44A1-BD6B-311EA7EDF481}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WWDemo.Models", "WWDemo.Models\WWDemo.Models.csproj", "{208535DC-C413-4C94-B116-706C0FFCD9B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebShop.Models", "WebShop.Models\WebShop.Models.csproj", "{208535DC-C413-4C94-B116-706C0FFCD9B2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WWDemo.Data", "WWDemo.Data\WWDemo.Data.csproj", "{58B669FE-A0E3-41AA-BC6B-ECE50523A2FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebShop.Data", "WebShop.Data\WebShop.Data.csproj", "{58B669FE-A0E3-41AA-BC6B-ECE50523A2FF}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{6317314C-0FAC-4833-9B2D-721040BDDF8B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WWDemo.MigrationRunner", "WWDemo.MigrationRunner\WWDemo.MigrationRunner.csproj", "{3BFDA660-7DD9-4F8F-AA90-6F558732438B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebShop.MigrationRunner", "WebShop.MigrationRunner\WebShop.MigrationRunner.csproj", "{3BFDA660-7DD9-4F8F-AA90-6F558732438B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WWDemo.Application", "WWDemo.Application\WWDemo.Application.csproj", "{05BA94F5-5159-41DD-A29A-7644C9755F47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebShop.Application", "WebShop.Application\WebShop.Application.csproj", "{05BA94F5-5159-41DD-A29A-7644C9755F47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

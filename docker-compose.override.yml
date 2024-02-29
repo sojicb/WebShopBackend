@@ -1,10 +1,10 @@
 version: '3.4'
 
 services:
-  wwdemo.api:
+  webshop.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings__PostgresDb__Server=wwdemo.postgresdb
+      - ConnectionStrings__PostgresDb__Server=webshop.postgresdb
       - ConnectionStrings__PostgresDb__Database=ww-demo-db
       - ConnectionStrings__PostgresDb__Username=postgres
       - ConnectionStrings__PostgresDb__Password=Pass123_
@@ -13,16 +13,16 @@ services:
       - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
       - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
 
-  wwdemo.migrationrunner:
+  webshop.migrationrunner:
     environment:
       - ASPNETCORE_ENVIRONMENT=Local
-      - ConnectionStrings__PostgresDb__Server=wwdemo.postgresdb
+      - ConnectionStrings__PostgresDb__Server=webshop.postgresdb
       - ConnectionStrings__PostgresDb__Database=ww-demo-db
       - ConnectionStrings__PostgresDb__Username=postgres
       - ConnectionStrings__PostgresDb__Password=Pass123_
       - ConnectionStrings__PostgresDb__Port=5432
 
-  wwdemo.postgresdb:
+  webshop.postgresdb:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=Pass123_
