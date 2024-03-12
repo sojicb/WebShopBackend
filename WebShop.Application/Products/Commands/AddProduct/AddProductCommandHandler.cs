@@ -19,7 +19,6 @@ namespace WebShop.Application.Products.Commands.AddProduct
 			var product = new Product 
 			{ 
 				SerialNumber = request.SerialNumber,
-				Category = request.Category,
 				Name = request.Name,
 				Price = request.Price,
 			};
