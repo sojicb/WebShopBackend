@@ -18,6 +18,7 @@ namespace WebShop.Data
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ProductConfiguration).Assembly);
 
+            //In the future, create without explicit relations
             modelBuilder.Entity<Category>()
                 .HasMany(x => x.Products);
 
@@ -26,6 +27,7 @@ namespace WebShop.Data
 
             modelBuilder.Entity<Tag>()
                 .HasMany(x => x.Products);
+
 
             modelBuilder.Entity<Product>()
 				.ToTable(nameof(Product));
