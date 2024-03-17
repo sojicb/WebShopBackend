@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-namespace WebShop.Models
+﻿namespace WebShop.Models
 {
 	public class Product : BaseModel
 	{
@@ -14,6 +12,7 @@ namespace WebShop.Models
         public string? Description { get; set; }
         public int Units { get; set; }
         public Guid? CategoryId { get; set; }
+        public virtual Category? Category { get; set; }
         public virtual List<Tag>? Tags { get; set; }
     }
 }

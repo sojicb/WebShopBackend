@@ -27,6 +27,14 @@ namespace WebShop.Data
             modelBuilder.Entity<Tag>()
                 .HasMany(x => x.Products);
 
-        }
+            modelBuilder.Entity<Product>()
+				.ToTable(nameof(Product));
+
+			modelBuilder.Entity<Category>()
+				.ToTable(nameof(Category));
+
+			modelBuilder.Entity<Tag>()
+				.ToTable(nameof(Tag));
+		}
     }
 }
