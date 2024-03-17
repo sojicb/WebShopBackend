@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using WebShop.Data;
@@ -11,9 +12,11 @@ using WebShop.Data;
 namespace WebShop.Data.Migrations
 {
     [DbContext(typeof(ApiDbContext))]
-    partial class ApiDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240312122143_Add_TagTable")]
+    partial class Add_TagTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,21 +24,6 @@ namespace WebShop.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
-
-            modelBuilder.Entity("ProductTag", b =>
-                {
-                    b.Property<Guid>("ProductsId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("TagsId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("ProductsId", "TagsId");
-
-                    b.HasIndex("TagsId");
-
-                    b.ToTable("ProductTag");
-                });
 
             modelBuilder.Entity("WebShop.Models.Category", b =>
                 {
@@ -57,16 +45,13 @@ namespace WebShop.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Category", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("WebShop.Models.Product", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid?>("CategoryId")
                         .HasColumnType("uuid");
 
                     b.Property<string>("Color")
@@ -101,12 +86,10 @@ namespace WebShop.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId");
-
                     b.HasIndex("SerialNumber")
                         .IsUnique();
 
-                    b.ToTable("Product", (string)null);
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("WebShop.Models.Tag", b =>
@@ -126,36 +109,7 @@ namespace WebShop.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Tag", (string)null);
-                });
-
-            modelBuilder.Entity("ProductTag", b =>
-                {
-                    b.HasOne("WebShop.Models.Product", null)
-                        .WithMany()
-                        .HasForeignKey("ProductsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WebShop.Models.Tag", null)
-                        .WithMany()
-                        .HasForeignKey("TagsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("WebShop.Models.Product", b =>
-                {
-                    b.HasOne("WebShop.Models.Category", "Category")
-                        .WithMany("Products")
-                        .HasForeignKey("CategoryId");
-
-                    b.Navigation("Category");
-                });
-
-            modelBuilder.Entity("WebShop.Models.Category", b =>
-                {
-                    b.Navigation("Products");
+                    b.ToTable("Tags");
                 });
 #pragma warning restore 612, 618
         }
